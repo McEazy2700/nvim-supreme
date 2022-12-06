@@ -135,6 +135,11 @@ _G.packer_plugins = {
     path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/glow.nvim",
     url = "https://github.com/ellisonleao/glow.nvim"
   },
+  ["gruvbox.nvim"] = {
+    loaded = true,
+    path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
   harpoon = {
     loaded = true,
     path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/harpoon",

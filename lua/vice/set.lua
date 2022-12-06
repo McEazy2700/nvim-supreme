@@ -3,30 +3,31 @@ local run = vim.cmd
 local glob = vim.g
 
 -- Color Scheme
--- run('colorscheme embark')
-require('github-theme').setup({
-  comment_style = "italic",
-  keyword_style = "italic",
-  variable_style = "italic",
-  theme_style = "dark",
-  function_style = "italic",
-  sidebars = {"qf", "vista_kind", "terminal", "packer"},
-
-  -- Change the "hint" color to the "orange" color, and make the "error" color bright red
-  -- colors = {hint = "orange", error = "#ff0000"},
-
-  -- Overwrite the highlight groups
-  overrides = function(c)
-    return {
-      htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
-      -- DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
-      -- this will remove the highlight groups
-      TSField = {},
-    }
-  end
-})
+run('colorscheme gruvbox')
+-- require('github-theme').setup({
+--   comment_style = "italic",
+--   keyword_style = "italic",
+--   variable_style = "italic",
+--   theme_style = "dark_default",
+--   function_style = "italic",
+--   sidebars = {"qf", "vista_kind", "terminal", "packer"},
+--
+--   -- Change the "hint" color to the "orange" color, and make the "error" color bright red
+--   -- colors = {hint = "orange", error = "#ff0000"},
+--
+--   -- Overwrite the highlight groups
+--   overrides = function(c)
+--     return {
+--       htmlTag = {fg = c.red, bg = "#282c34", sp = c.hint, style = "underline"},
+--       -- DiagnosticHint = {link = "LspDiagnosticsDefaultHint"},
+--       -- this will remove the highlight groups
+--       TSField = {},
+--     }
+--   end
+-- })
 
 -- Regular Stuff
+vim.o.background = "dark" -- or "light" for light mode
 set.guicursor = ""
 set.swapfile = false
 set.backup = false

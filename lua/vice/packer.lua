@@ -12,6 +12,7 @@ return require("packer").startup(function(use)
   use("sainnhe/sonokai")
   use { 'embark-theme/vim', as = 'embark' }
   use ({ 'projekt0n/github-nvim-theme' })
+  use { "ellisonleao/gruvbox.nvim" }
 
   -- Auto pairs
   use {
