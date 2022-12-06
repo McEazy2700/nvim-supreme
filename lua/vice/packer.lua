@@ -5,8 +5,13 @@ return require("packer").startup(function(use)
   use("wbthomason/packer.nvim")
   use("theprimeagen/harpoon")
   use("nvim-lua/plenary.nvim")
-  use("sainnhe/sonokai")
   use("folke/which-key.nvim")
+
+  -- Color Schemes
+  use("ray-x/aurora")
+  use("sainnhe/sonokai")
+  use { 'embark-theme/vim', as = 'embark' }
+  use ({ 'projekt0n/github-nvim-theme' })
 
   -- Auto pairs
   use {

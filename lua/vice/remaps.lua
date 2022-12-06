@@ -10,6 +10,8 @@ nnoremap("<leader>pv", "<cmd>Ex<CR>");
 nnoremap("<leader>/", "<cmd>CommentToggle<cr>");
 vnoremap("<leader>/", ":CommentToggle<cr>");
 
+nnoremap("L", "<cmd>BufferNext<cr>");
+nnoremap("H",")<cmd>BufferPrevious<cr>");
 nnoremap("<c-h>", "<cmd>wincmd h<CR>");
 nnoremap("<c-l>", "<cmd>wincmd l<CR>");
 nnoremap("<c-\\>", "<cmd>ToggleTerm dir=./ direction=float<CR>");

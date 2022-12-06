@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  aurora = {
+    loaded = true,
+    path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/aurora",
+    url = "https://github.com/ray-x/aurora"
+  },
   ["barbar.nvim"] = {
     loaded = true,
     path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/barbar.nvim",
@@ -114,6 +119,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  embark = {
+    loaded = true,
+    path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/embark",
+    url = "https://github.com/embark-theme/vim"
+  },
+  ["github-nvim-theme"] = {
+    loaded = true,
+    path = "/home/Eazy/.local/share/nvim/site/pack/packer/start/github-nvim-theme",
+    url = "https://github.com/projekt0n/github-nvim-theme"
   },
   ["glow.nvim"] = {
     loaded = true,
