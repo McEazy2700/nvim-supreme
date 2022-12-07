@@ -59,6 +59,11 @@ return require("packer").startup(function(use)
   use("hrsh7th/vim-vsnip")
   use("L3MON4D3/LuaSnip")
   use("saadparwaiz1/cmp_luasnip")
+  use("rafamadriz/friendly-snippets")
+  use {'dsznajder/vscode-es7-javascript-react-snippets',
+    run = 'yarn install --frozen-lockfile && yarn compile'
+  }
+  use("honza/vim-snippets")
 
   -- Nvim-tree
   use {
