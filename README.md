@@ -1,4 +1,10 @@
 # nvim-supreme
+
+<!--toc:start-->
+- [nvim-supreme](#nvim-supreme)
+  - [Getting Started](#getting-started)
+<!--toc:end-->
+
 My Super smooth neovim config.  
 Comes with that sliper goodness, comes with that coconut oil to get me going **Blazinly Fast** as quickly as possible.
 
