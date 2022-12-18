@@ -6,10 +6,12 @@
 <!--toc:end-->
 
 My Super smooth neovim config.  
-Comes with that sliper goodness, comes with that coconut oil to get me going **Blazinly Fast** as quickly as possible.
+Comes with that sliper goodness, comes with that coconut oil to get me going **Blazinly Fast**
+as quickly as possible.
 
 ## Getting Started
-If you already have Neovim installed you can countinue with the steps bellow else checkout the [installation guied](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+If you already have Neovim installed you can countinue with the steps bellow else checkout the
+[installation guide](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 * Backup old config if any.
 ```bash
 mv -r ~/.config/nvim ~/.config/nvim_old
