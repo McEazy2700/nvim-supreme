@@ -1,82 +1,102 @@
-vim.cmd([[packadd packer.nvim]]);
+vim.cmd [[packadd packer.nvim]]
 
-return require("packer").startup(function(use)
+return require('packer').startup({function(use)
   -- Packer can manage itself
   use("wbthomason/packer.nvim")
-  use("theprimeagen/harpoon")
-  use("nvim-lua/plenary.nvim")
-  use("folke/which-key.nvim")
+  -- Lsp and Treesitter
+  use{"nvim-treesitter/nvim-treesitter", { run = ":TSUpdate"}}
+  use("nvim-treesitter/playground")
+  use {
+  'VonHeikemen/lsp-zero.nvim',
+  requires = {
+	  -- LSP Support
+	  {'neovim/nvim-lspconfig'},
+	  {'williamboman/mason.nvim'},
+	  {'williamboman/mason-lspconfig.nvim'},
 
-  -- Color Schemes
-  use("ray-x/aurora")
-  use("sainnhe/sonokai")
-  use { 'embark-theme/vim', as = 'embark' }
-  use ({ 'projekt0n/github-nvim-theme' })
-  use { "ellisonleao/gruvbox.nvim" }
+	  -- Autocompletion
+	  {'hrsh7th/nvim-cmp'},
+	  {'hrsh7th/cmp-buffer'},
+	  {'hrsh7th/cmp-path'},
+	  {'saadparwaiz1/cmp_luasnip'},
+	  {'hrsh7th/cmp-nvim-lsp'},
+	  {'hrsh7th/cmp-nvim-lua'},
+
+	  -- Snippets
+	  {'L3MON4D3/LuaSnip'},
+	  {'rafamadriz/friendly-snippets'},
+	  }
+	}
+
+  -- Telescope and Harpoon
+  use {
+	"nvim-telescope/telescope.nvim",
+	tag = '0.1.0',
+	requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  use("ThePrimeagen/harpoon")
+  use("mbbill/undotree")
+  use({
+      "nvim-tree/nvim-tree.lua",
+      requires = {"nvim-tree/nvim-web-devicons"},
+      tag = "nightly"
+  })
+
+  -- Git
+  use("tpope/vim-fugitive")
+
+  -- ColorSchemes
+  use("Mofiqul/dracula.nvim")
+  use("EdenEast/nightfox.nvim")
+  use("folke/tokyonight.nvim")
+  -- use({"rose-pine/neovim", as = "rose-pine",})
 
   -- Auto pairs
   use {
-	"windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+      "windwp/nvim-autopairs",
+      config = function() require("nvim-autopairs").setup {} end
   }
 
-  -- Toggle Term
-  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-    require("toggleterm").setup()end
+  -- Comment
+  use({
+      "terrortylor/nvim-comment",
+      config = function ()
+        require("nvim_comment").setup()
+      end
+  })
+
+  -- Toggleterm
+  use("akinsho/toggleterm.nvim")
+
+  -- Which-key
+  use {
+      "folke/which-key.nvim",
+      config = function()
+          require("which-key").setup {
+              -- your configuration comes here
+              -- or leave it empty to use the default settings
+              -- refer to the configuration section below
+          }
+      end
   }
 
-  -- Tabs 
-  use 'nvim-tree/nvim-web-devicons'
+  -- lualine
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+  }
+
+  -- indent blank line
+  use("lukas-reineke/indent-blankline.nvim")
+
+  -- Tabs
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
-
-  --Status line
-  use {
-    'nvim-lualine/lualine.nvim',
+end,
+config = {
+  display = {
+    prompt_border = "curved", --"single",
+    open_fn = function()
+      return require('packer.util').float({ border = "rounded" })
+    end
   }
-  -- Markdown stuff
-  use {"ellisonleao/glow.nvim"}
-  use({ 'toppair/peek.nvim', run = 'deno task --quiet build:fast' })
-
-  -- Auto Comment 
-  use "terrortylor/nvim-comment"
-
-  -- Tresitter 
-  use{"nvim-treesitter/nvim-treesitter"}
-
-  -- Auto complete and lsp
-  use("neovim/nvim-lspconfig")
-  use("hrsh7th/cmp-nvim-lsp")
-  use("hrsh7th/cmp-nvim-lua")
-  use("hrsh7th/cmp-buffer")
-  use("hrsh7th/cmp-path")
-  use("hrsh7th/nvim-cmp")
-
-  -- Mason
-  use { "williamboman/mason.nvim" }
-  use { "williamboman/mason-lspconfig.nvim" }
-  -- Code snipets
-  use("hrsh7th/cmp-vsnip")
-  use("hrsh7th/vim-vsnip")
-  use("L3MON4D3/LuaSnip")
-  use("saadparwaiz1/cmp_luasnip")
-  use("rafamadriz/friendly-snippets")
-  use {'dsznajder/vscode-es7-javascript-react-snippets',
-    run = 'yarn install --frozen-lockfile && yarn compile'
-  }
-  use("honza/vim-snippets")
-
-  -- Nvim-tree
-  use {
-      'nvim-tree/nvim-tree.lua',
-      requires = {
-        'nvim-tree/nvim-web-devicons', -- optional, for file icons
-      },
-      tag = 'nightly' -- optional, updated every week. (see issue #1193)
-  }
-
-  -- Telescope
-  use{
-      "nvim-telescope/telescope.nvim",
-      tag = "0.1.0"
-  }
-end);
+}})

@@ -1,17 +1,17 @@
--- local nnoremap = require("vice.keymap").nnoremap;
--- local _, err = require("harpoon");
--- if err then print("From harpoon: ", err) end;
--- local ui = require("harpoon.ui");
--- local mark = require("harpoon.mark");
--- local term = require("harpoon.term");
+local mark = require("harpoon.mark");
+local ui = require("harpoon.ui");
+local term = require("harpoon.term");
 
--- nnoremap("<leader>ha", function() mark.add_file() end)
--- nnoremap("<leader>he", function() ui.toggle_quick_menu() end)
--- nnoremap("<leader>ht1", function() term.gotoTerminal(1) end)
--- nnoremap("<leader>ht2", function() term.gotoTerminal(2) end)
--- nnoremap("<leader>hh", function() ui.nav_next() end)
--- nnoremap("<leader>hl", function() ui.nav_prev() end)
--- nnoremap("<leader>hj1", function() ui.nav_file(1) end)
--- nnoremap("<leader>hj2", function() ui.nav_file(2) end)
--- nnoremap("<leader>hj3", function() ui.nav_file(3) end)
--- nnoremap("<leader>hj4", function() ui.nav_file(4) end)
+local set = vim.keymap.set
+set("n", "<leader>ha", mark.add_file)
+set("n", "<leader>he", ui.toggle_quick_menu)
+set("n", "<leader>hl", ui.nav_next)
+set("n", "<leader>hh", ui.nav_prev)
+set("n", "<leader>ht", function()
+	local target = vim.fn.input("Term:: ");
+	term.gotoTerminal(tonumber(target));
+end)
+set("n", "<leader>hf", function()
+	local target = vim.fn.input("File:: ");
+	ui.nav_file(tonumber(target)); 
+end)
