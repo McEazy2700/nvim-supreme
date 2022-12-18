@@ -6,7 +6,7 @@
 <!--toc:end-->
 
 My Super smooth neovim config.  
-Comes with that sliper goodness, comes with that coconut oil to get me going **Blazinly Fast**
+Comes with that sliper goodness and that coconut oil to get me going **Blazinly Fast**
 as quickly as possible.
 
 ## Getting Started
