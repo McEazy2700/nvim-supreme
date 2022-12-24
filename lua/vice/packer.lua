@@ -91,6 +91,31 @@ return require('packer').startup({function(use)
 
   -- Tabs
   use {'romgrk/barbar.nvim', wants = 'nvim-web-devicons'}
+
+  -- CSS
+  use{
+    "NvChad/nvim-colorizer.lua",
+    config = function ()
+      require("colorizer").setup()
+    end
+  }
+
+  -- Markdown
+  use {"ellisonleao/glow.nvim"}
+  use({
+    "toppair/peek.nvim",
+    config = function ()
+      require("peek").setup();
+    end,
+    run = "deno task --quiet build:fast"
+  })
+
+  -- color-picker
+  use ({"ziontee113/color-picker.nvim",
+      config = function()
+          require("color-picker")
+      end,
+  })
 end,
 config = {
   display = {

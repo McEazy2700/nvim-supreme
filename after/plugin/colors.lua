@@ -1,3 +1,4 @@
+local vim = vim;
 function ColorDeezNutz(color)
 	color = color or "tokyonight-night";
 	vim.cmd.colorscheme(color);
