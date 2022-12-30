@@ -116,6 +116,9 @@ return require('packer').startup({function(use)
           require("color-picker")
       end,
   })
+
+  -- Transparency
+  use("xiyaowong/nvim-transparent")
 end,
 config = {
   display = {
