@@ -6,6 +6,14 @@ require("transparent").setup({
   --   -- In particular, when you set it to 'all', that means all available groups
   --
   --   -- example of akinsho/nvim-bufferline.lua
+  --   "Folded",
+  --   "FoldColumn",
+  --   -- "PMenu",
+  --   -- "PMenuSel",
+  --   -- "PMenuSBar",
+  --   "PMenuThumb",
+  --   "WildMenu",
+  --   "NormalFloat",
   --   "BufferLineTabClose",
   --   "BufferlineBufferSelected",
   --   "BufferLineFill",
@@ -13,7 +21,17 @@ require("transparent").setup({
   --   "BufferLineSeparator",
   --   "BufferLineIndicatorSelected",
   -- },
-  exclude = {}, -- table: groups you don't want to clear
+  exclude = {
+    "Visual",
+    "StatusLine",
+    "EndOfBuffer",
+    "WinSeperator",
+    "PMenu",
+    "VerticalSplit",
+    -- "PMenuSel",
+    -- "PMenuSBar",
+    -- "PMenuThumb"
+  }, -- table: groups you don't want to clear
 })
 function ColorDeezNutz(color)
 	color = color or "tokyonight-night";

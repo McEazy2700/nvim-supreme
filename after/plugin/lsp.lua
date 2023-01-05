@@ -1,6 +1,21 @@
 local lsp = require('lsp-zero')
 local bind = vim.keymap.set
 
+require('mason.settings').set({
+  ui = {
+    border = 'rounded'
+  }
+})
+
+local cmp = require("cmp")
+local cmp_config = lsp.defaults.cmp_config({
+  window = {
+    completion = cmp.config.window.bordered()
+  }
+})
+cmp.setup(cmp_config)
+
+
 lsp.preset('recommended')
 lsp.setup()
 lsp.ensure_installed({

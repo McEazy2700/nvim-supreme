@@ -54,7 +54,18 @@ vim.keymap.set("n", "<c-h>", "<cmd>wincmd h<CR>", { desc = "Focus left window" }
 vim.keymap.set("n", "<c-l>", "<cmd>wincmd l<CR>", { desc = "Focus right window" });
 vim.keymap.set("n", "<c-j>", "<cmd>wincmd j<CR>", { desc = "Focus bottom window" });
 vim.keymap.set("n", "<C-i>", "<cmd>wincmd k<CR>", { desc = "Focus top window" });
-vim.keymap.set("n", "<leader>oe", "<cmd>NvimTreeToggle<CR>", { desc = "[o]pen explorer" })
+
+-- Exporers
+vim.keymap.set("n", "<leader>oe", "<cmd>NvimTreeToggle<CR>", { desc = "[o]pen/close [e]xplorer" })
+vim.keymap.set("n", "<leader>on", function ()
+  if (vim.api.nvim_buf_get_option(0, "filetype") == "netrw") then
+    vim.api.nvim_exec("close", false)
+  else
+    vim.api.nvim_exec(":Vexplore", false)
+  end
+end, { desc = "[o]pen/close [n]etRW" })
+
+
 vim.keymap.set("n", "H", "<cmd>BufferPrevious<cr>", { desc = "Left Buffer"})
 vim.keymap.set("n", "L", "<cmd>BufferNext<cr>", { desc = "Right Buffer"})
 vim.keymap.set("n", "<leader>c", "<cmd>BufferClose<cr>", { desc = "[c]lose Buffer"})
