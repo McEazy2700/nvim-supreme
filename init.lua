@@ -1,0 +1,6 @@
+require("custom.settings")
+require("lazy_config")
+require("custom.keymaps")
+require("custom.plugins")
+require("custom.colors")
+require("custom.lsp")
