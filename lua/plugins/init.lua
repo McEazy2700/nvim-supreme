@@ -1,11 +1,7 @@
 local plugin_dir = Vim.fn.stdpath("config") .. "/lua/plugins"
 
 local function load_plugins_from_dir(dir)
-	local combined_results = {
-
-		{ "folke/neoconf.nvim", cmd = "Neoconf" },
-		"folke/neodev.nvim",
-	}
+	local combined_results = {}
 
 	local handle = Vim.loop.fs_scandir(dir)
 	if not handle then
