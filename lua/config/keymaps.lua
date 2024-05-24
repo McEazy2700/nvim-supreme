@@ -5,16 +5,16 @@ map("t", "<M-f>", "<cmd>1 ToggleTerm direction=float name='Term 1'<cr>", { desc 
 map("n", "<M-h>", "<cmd>2 ToggleTerm direction=horizontal name='Term 2'<cr>", { desc = "Toggle horizontal terminal" })
 map("t", "<M-h>", "<cmd>2 ToggleTerm direction=horizontal name='Term 2'<cr>", { desc = "Toggle horizontal terminal" })
 map(
-  "n",
-  "<M-v>",
-  "<cmd>3 ToggleTerm direction=vertical name='Term 3' size=90<cr>",
-  { desc = "Toggle vertical terminal" }
+	"n",
+	"<M-v>",
+	"<cmd>3 ToggleTerm direction=vertical name='Term 3' size=90<cr>",
+	{ desc = "Toggle vertical terminal" }
 )
 map(
-  "t",
-  "<M-v>",
-  "<cmd>3 ToggleTerm direction=vertical name='Term 3' size=90<cr>",
-  { desc = "Toggle vertical terminal" }
+	"t",
+	"<M-v>",
+	"<cmd>3 ToggleTerm direction=vertical name='Term 3' size=90<cr>",
+	{ desc = "Toggle vertical terminal" }
 )
 map("n", "<M-t>", "<cmd>4 ToggleTerm direction=tab name='Term 4'<cr>", { desc = "Toggle tab terminal" })
 map("t", "<M-t>", "<cmd>4 ToggleTerm direction=tab name='Term 4'<cr>", { desc = "Toggle tab terminal" })
