@@ -39,8 +39,9 @@ return {
 				)
 				map("n", "gx", "<cmd>Telescope diagnostics bufnr=0<cr>", { desc = "Lsp Diagnostics" })
 				map("n", "lx", "<cmd>Telescope diagnostics<cr>", { desc = "Lsp Diagnostics" })
-				map("n", "lr", Vim.lsp.buf.rename, { desc = "Lsp Rename" })
-				map("n", "lf", format_callback, { desc = "Lsp Format" })
+				map("n", "lr", Vim.lsp.buf.rename, { desc = "Lsp Rename", buffer = bufnr })
+				map("n", "lf", format_callback, { desc = "Lsp Format", buffer = bufnr })
+				map("n", "la", Vim.lsp.buf.code_action, { desc = "Lsp Code action", buffer = bufnr })
 			end)
 
 			lsp_zero.set_sign_icons({
