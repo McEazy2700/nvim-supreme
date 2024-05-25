@@ -78,8 +78,8 @@ return {
           completeopt = "menu,menuone,noinsert",
         },
         sources = {
-          { name = "nvim_lsp" },
           { name = "luasnip" },
+          { name = "nvim_lsp" },
         },
         mapping = cmp.mapping.preset.insert({
           ["<Tab>"] = cmp_action.luasnip_supertab(),
